@@ -23,20 +23,21 @@ class HomePage extends StatelessWidget {
         backgroundColor: const Color(0xff003366),
         toolbarHeight: 64,
         surfaceTintColor: const Color(0xff003366),
-        title: model.data?.title == null
-            ? LoadingsWidgets.appBarTitleLoad
-            : Text(
-                model.data?.title ?? S.of(context).title,
-                style: const TextStyle(fontSize: 24, color: Colors.white),
-              ),
-        leading: FutureBuilder(
-          builder: (context, snapshot) => IconButton(
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-              color: Colors.white,
-              icon: const Icon(Icons.menu)),
-        ),
+        // title: model.data?.title == null
+        //     ? LoadingsWidgets.appBarTitleLoad
+        //     : Text(
+        //         model.data?.title ?? S.of(context).title,
+        //         style: const TextStyle(fontSize: 24, color: Colors.white),
+        //       ),
+        // leading: FutureBuilder(
+        //   future: ,
+        //   builder: (context, snapshot) => IconButton(
+        //       onPressed: () {
+        //         Scaffold.of(context).openDrawer();
+        //       },
+        //       color: Colors.white,
+        //       icon: const Icon(Icons.menu)),
+        // ),
         centerTitle: true,
       ),
       body: const HomePageContent(),

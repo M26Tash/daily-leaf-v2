@@ -18,8 +18,10 @@ class S {
   static S? _current;
 
   static S get current {
-    assert(_current != null,
-        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
+    assert(
+      _current != null,
+      'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.',
+    );
     return _current!;
   }
 
@@ -41,8 +43,10 @@ class S {
 
   static S of(BuildContext context) {
     final instance = S.maybeOf(context);
-    assert(instance != null,
-        'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
+    assert(
+      instance != null,
+      'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?',
+    );
     return instance!;
   }
 
@@ -52,22 +56,12 @@ class S {
 
   /// `Loading`
   String get title {
-    return Intl.message(
-      'Loading',
-      name: 'title',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Loading', name: 'title', desc: '', args: []);
   }
 
   /// `All News`
   String get bodytitile {
-    return Intl.message(
-      'All News',
-      name: 'bodytitile',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('All News', name: 'bodytitile', desc: '', args: []);
   }
 }
 

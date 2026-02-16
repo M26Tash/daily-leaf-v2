@@ -11,28 +11,29 @@ class HomePageAllNews extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final model = Provider.of<NewsProvider>(context);
-    final data = model.data;
-    return data?.items.length != null ?
-    
-    ListView.separated(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      itemBuilder: (context, index) => AllNewsItem(
-        index: index,
-      ),
-      separatorBuilder: (context, index) => const SizedBox(height: 16),
-      itemCount: data!.items.length,
-    ) : 
-    ListView.separated(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      itemBuilder: (context, index) => LoadingsWidgets.allNewsItem,
-      separatorBuilder: (context, index) => const SizedBox(height: 16),
-      itemCount: 10,
-    );
+    // final model = Provider.of<NewsProvider>(context);
+    // final data = model.data;
+    // return data?.items.length != null ?
+
+    // ListView.separated(
+    //   padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+    //   shrinkWrap: true,
+    //   physics: const NeverScrollableScrollPhysics(),
+    //   itemBuilder: (context, index) => AllNewsItem(
+    //     index: index,
+    //   ),
+    //   separatorBuilder: (context, index) => const SizedBox(height: 16),
+    //   itemCount: data!.items.length,
+    // ) :
+    // ListView.separated(
+    //   padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+    //   shrinkWrap: true,
+    //   physics: const NeverScrollableScrollPhysics(),
+    //   itemBuilder: (context, index) => LoadingsWidgets.allNewsItem,
+    //   separatorBuilder: (context, index) => const SizedBox(height: 16),
+    //   itemCount: 10,
+    // );
+    return Placeholder();
   }
 }
 
@@ -43,54 +44,55 @@ class AllNewsItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final model = Provider.of<NewsProvider>(context);
-    final data = model.data;
-    return InkWell(
-      borderRadius: BorderRadius.circular(12),
-      onTap: () async {
-        await launchUrlString("${data!.items[index].link}");
-      },
-      child: Container(
-        padding: const EdgeInsets.all(8),
-        height: 320,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ClipRRect(
-              borderRadius: const BorderRadius.all(Radius.circular(12)),
-              child: data?.items[index].enclosure?.url != null
-                  ? CachedNetworkImage(
-                      height: 200,
-                      fit: BoxFit.fitWidth,
-                      width: double.infinity,
-                      imageUrl: data!.items[index].enclosure!.url!,
-                      progressIndicatorBuilder: (context, url, progress) =>
-                          const Center(
-                        child: CupertinoActivityIndicator(),
-                      ),
-                    )
-                  : const SizedBox(
-                      height: 250,
-                      child: Center(
-                        child: CupertinoActivityIndicator(),
-                  ),
-                ),
-              ),
-            const SizedBox(height: 12),
-            Text(
-              data?.items[index].title ?? '123',
-              maxLines: 3,
-              style: const TextStyle(
-                fontWeight: FontWeight.w500,
-                fontSize: 18,
-                height: 0.9,
-                wordSpacing: 5,
-              ),
-            ),
-            const Spacer(),
-             Text(data?.items[index].pubDate ?? '0'),
-          ],
-        ),
-      ),
-    );
+    // final data = model.data;
+    // return InkWell(
+    //   borderRadius: BorderRadius.circular(12),
+    //   onTap: () async {
+    //     await launchUrlString("${data!.items[index].link}");
+    //   },
+    //   child: Container(
+    //     padding: const EdgeInsets.all(8),
+    //     height: 320,
+    //     child: Column(
+    //       crossAxisAlignment: CrossAxisAlignment.start,
+    //       children: [
+    //         ClipRRect(
+    //           borderRadius: const BorderRadius.all(Radius.circular(12)),
+    //           child: data?.items[index].enclosure?.url != null
+    //               ? CachedNetworkImage(
+    //                   height: 200,
+    //                   fit: BoxFit.fitWidth,
+    //                   width: double.infinity,
+    //                   imageUrl: data!.items[index].enclosure!.url!,
+    //                   progressIndicatorBuilder: (context, url, progress) =>
+    //                       const Center(
+    //                     child: CupertinoActivityIndicator(),
+    //                   ),
+    //                 )
+    //               : const SizedBox(
+    //                   height: 250,
+    //                   child: Center(
+    //                     child: CupertinoActivityIndicator(),
+    //                   ),
+    //                 ),
+    //         ),
+    //         const SizedBox(height: 12),
+    //         Text(
+    //           data?.items[index].title ?? '123',
+    //           maxLines: 3,
+    //           style: const TextStyle(
+    //             fontWeight: FontWeight.w500,
+    //             fontSize: 18,
+    //             height: 0.9,
+    //             wordSpacing: 5,
+    //           ),
+    //         ),
+    //         const Spacer(),
+    //         Text(data?.items[index].pubDate ?? '0'),
+    //       ],
+    //     ),
+    //   ),
+    // );
+    return Placeholder();
   }
 }
