@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/src/common/theme/news_theme.dart';
+import 'package:daily_leaf/src/common/theme/news_theme.dart';
 
 final class ThemeProvider extends InheritedWidget {
   static ThemeProvider of(BuildContext context) {

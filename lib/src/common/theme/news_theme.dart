@@ -14,11 +14,12 @@ final class NewsTheme extends Equatable {
 
   final Color primaryIconColor;
   final Color secondaryIconColor;
+  final Color lightIconColor;
 
   final Color primaryTextColor;
   final Color secondaryTextColor;
 
-  // final String fontFamily;
+  final String fontFamily;
 
   final Brightness statusBarTheme;
   final Brightness navigationBarBrightness;
@@ -32,10 +33,11 @@ final class NewsTheme extends Equatable {
     accentColor,
     primaryIconColor,
     secondaryIconColor,
+    lightIconColor,
     transparent,
     primaryTextColor,
     secondaryTextColor,
-    // fontFamily,
+    fontFamily,
     statusBarTheme,
     navigationBarBrightness,
   ];
@@ -48,10 +50,11 @@ final class NewsTheme extends Equatable {
     required this.accentColor,
     required this.primaryIconColor,
     required this.secondaryIconColor,
+    required this.lightIconColor,
     required this.transparent,
     required this.primaryTextColor,
     required this.secondaryTextColor,
-    // required this.fontFamily,
+    required this.fontFamily,
     required this.statusBarTheme,
     required this.navigationBarBrightness,
   });

@@ -1,4 +1,24 @@
 {
-    "loading": "Загрузка",
-    "allNews": "Все новости"
+    "dailyLeaf": "Daily Leaf",
+    "latestNews": "Последние новости",
+    "ecoFriendlyNewsEngine": "Экологически чистый новостной движок",
+    "poweredByGreenEnergy": "Работает на основе Green Energy и API GNews",
+    "readFullArticle": "Читать полную статью",
+    "savedArticles": "Сохраненные статьи",
+    "noSavedArticles": "Сохраненные статьи отсутствуют",
+    "articlesYouSaveWillAppearHere": "Сохраненные вами статьи будут отображаться здесь",
+    "settings": "Настройки",
+    "appearance": "Внешний вид",
+    "darkMode": "Темный режим",
+    "language": "Язык",
+    "content": "Содержание",
+    "newsLanguage": "Язык новостей",
+    "newsCountry": "Страна новостей",
+    "notifications": "Уведомления",
+    "breakingNews": "Срочные новости",
+    "storage": "Хранилище",
+    "resetDatabase": "Сбросить базу данных",
+    "appLanguage": "Язык приложения",
+    "app": "Приложение",
+    "version": "Версия"
 }
