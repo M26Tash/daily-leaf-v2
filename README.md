@@ -1,40 +1,101 @@
-<h1 align = "center"> News App </h1>
+# 🌿 Daily Leaf - Modern News Aggregator
 
-  I present to you a news application with the ability to localize into three languages: Russian, Uzbek and English. This application receives news data from the uzreport resource, which allows users to keep abreast of the latest events in Uzbekistan and in the world.
+Daily Leaf is a sleek, minimalist news application built with Flutter, focused on clean architecture, real-time data fetching from GNews API.
 
-  To implement localization and multilingual support, we use the intl, l10n, Provider, Http and Rss libraries. The intl library helps us with translating the application's text elements into different languages. The l10n library allows you to manage localization and translations in your application, providing flexibility and convenience for users.
+## 📱 Preview
+<h3 align="center" >Light Theme ☀️</h3>
+<p align="center">
+  <img src="screenshots/light_home_screenshot_portrait.png" width="20%"/>
+  <img src="screenshots/light_bookmark_screenshot_portrait.png" width="20%"/>
+  <img src="screenshots/light_settings_screenshot_portrait.png" width="20%"/>
+  <img src="screenshots/light_details_screenshot_portrait.png" width="20%"/>
+</p>
 
-  The Provider library is used to manage application state and pass data between different widgets. It helps us efficiently manage news information and provide it to users in the language they need.
+<h3 align="center" >Dark Theme 🌙</h3>
+<p align="center">
+  <img src="screenshots/dark_home_screenshot_portrait.png" width="20%"/>
+  <img src="screenshots/dark_bookmark_screenshot_portrait.png" width="20%"/>
+  <img src="screenshots/dark_settings_screenshot_portrait.png" width="20%"/>
+  <img src="screenshots/light_details_screenshot_portrait.png" width="20%"/>
+</p>
 
-  The Http library is used to make requests to the uzreport web server and receive up-to-date news data. With this library, we can get the latest news and update it in real time in the app.
+## 🧠 About the Project
 
-  Finally, the Rss library allows you to process news data in the RSS (Really Simple Syndication) format. It allows us to receive structured information about the news, such as headlines, texts and images, and present them to the user in a convenient and understandable format.
-As a result, our news application provides a wide range of users with access to up-to-date news in several languages, facilitating the process of obtaining information and maintaining links with the external resource uzreport for news updates.
+**Daily Leaf** allows users to stay informed with global news, filter content by country/language, and save important articles for offline reading.
 
-## Available Languages
+This project was a complete **Rebirth (v2.0.0)** of an old 2022 concept, rebuilt in **Feb 2026** to demonstrate:
 <ul>
-  <li><img src="https://static.vecteezy.com/system/resources/previews/016/328/983/original/united-kingdom-flat-rounded-flag-icon-with-transparent-background-free-png.png" width="16" height="16"> English</li>
-  <li><img src="https://static.vecteezy.com/system/resources/previews/011/571/337/non_2x/circle-flag-of-uzbekistan-free-png.png" width="16" height="16"> Uzbek</li>
-  <li><img src="https://static.vecteezy.com/system/resources/previews/016/328/914/original/russia-flat-rounded-flag-icon-with-transparent-background-free-png.png" width="16" height="16"> Russian</li>
+  <li>Advanced <b>Feature-first (Clean Architecture)</b></li>
+  <li>Robust local persistence with <b>Drift (SQLite)</b></li>
+  <li>Secure environment management for API keys</li>
+  <li>Deep localization (EN, RU, TR)</li>
+  <li>Reactive state management</li>
 </ul>
 
-# Screens
-<div align = "center">
-  <img src = "https://github.com/TashM26/News-App/assets/137183001/5ab46096-f797-42c1-b8d3-be8b51ecab3c" width = "300">
-  <img src = "https://github.com/TashM26/News-App/assets/137183001/fc77457f-2af9-452e-8d1f-2ba7b073e399" width = "300">
-</div>
+## 🚀 Features
 
-# Reach me
-<div>
-    <a href="mailto:tashdevteam@gmail.com">
-      <img src="https://www.pngmart.com/files/16/Gmail-Logo-PNG-Transparent-Image.png" width = "18" height = "14" />
-      <span>Contact Me</span>
-    </a>
-</div>
+<ul>
+  <li>🌍 <b>Global Reach:</b> Real-time headlines from GNews API</li>
+  <li>🔖 <b>Offline Bookmarks:</b> Save articles to local DB with Drift</li>
+  <li>⚙️ <b>Dynamic Content:</b> Change news region & language on the fly</li>
+  <li>🔔 <b>Alerts:</b> Local notifications for breaking news</li>
+  <li>🌗 <b>Theming:</b> Seamless Light & Dark mode support</li>
+  <li>⚡ <b>Performance:</b> Image caching and optimized network calls</li>
+  <li>🔐 <b>Security:</b> API keys secured via .env variables</li>
+</ul>
 
-<div>
-    <a href="https://www.instagram.com/m26_tash">
-      <img src="https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c521.png" width = "18" height = "16"/>
-      <span>Follow Me</span>
-    </a>
-</div>
+## 🛠 Tech Stack
+<ul>
+  <li><b>Flutter</b> - UI Framework</li>
+  <li><b>Provider</b> - State Management</li>
+  <li><b>Drift</b> - Reactive SQLite Database</li>
+  <li><b>Dio</b> - Networking with Interceptors</li>
+  <li><b>Flutter Dotenv</b> - Security</li>
+  <li><b>Flutter Native Splash</b> - Branded startup experience</li>
+</ul>
+
+## 🏗 Architecture Principles
+The project follows **Clean Architecture** principles within a **Feature-first** structure:
+
+<ul>
+  <li><b>Data Layer (core/):</b> Responsible for external data sources (GNews API, Drift DB). Includes <code>api_clients</code>, <code>database</code> schema, and <code>repositories</code> implementations.</li>
+  <li><b>Domain Layer (core/models & interfaces):</b> Contains business entities and repository contracts. It is independent of UI and defines <i>what</i> the app does.</li>
+  <li><b>Presentation Layer (features/):</b> Divided by feature (e.g., News, Settings). Each feature contains its own <code>pages</code>, <code>widgets</code>, and <code>providers</code> (State Management).</li>
+</ul>
+
+## 📁 Folder Structure
+<pre><code>
+lib/
+ ├── src/
+ │   ├── core/                  # Data & Business Logic Layer
+ │   │   ├── api_clients/       # Network clients (Dio)
+ │   │   ├── database/          # Local persistence (Drift/SQLite)
+ │   │   ├── models/            # Data & domain entities
+ │   │   ├── repositories/      # Data access layer
+ │   │   │   ├── interfaces/    # Repository contracts (Abstraction)
+ │   │   │   └── ...            # Repository implementations
+ │   │   └── utils/             # Business helpers & extensions
+ │   │
+ │   ├── features/              # Presentation Layer (Feature-first)
+ │   │   └── each_feature/      # (news, bookmarks, settings, etc.)
+ │   │       ├── pages/         # UI Screens
+ │   │       ├── providers/     # State management logic
+ │   │       └── widgets/       # Feature-specific UI components
+ │   │
+ │   └── common/                # Shared Infrastructure
+ │       ├── theme/             # Design system (Dark/Light)
+ │       ├── shared_providers/  # App-wide state (Theme, Locale)
+ │       ├── constants/         # Styles, Dimensions
+ │       └── widgets/           # Global reusable UI components
+ │
+ └── main.dart                  # App bootstrap & Environment setup
+</code></pre>
+
+## 👨‍💻 About the Developer
+<p>Developed by Tash</p>
+<p>Flutter Developer & Tech Enthusiast</p>
+
+<p>💼 LinkedIn: <a href="https://linkedin.com/in/muhammed-taş-00a01619b/" target="_blank">click</a></p>
+
+## ⚠️ Disclaimer
+This application is for **portfolio and educational purposes**. News content is provided by the GNews API and belongs to their respective publishers.
