@@ -1,4 +1,24 @@
 {
-    "loading": "Yükleniyor",
-    "allNews": "Tüm haberler"
+    "dailyLeaf": "Daily Leaf",
+    "latestNews": "Son Haberler",
+    "ecoFriendlyNewsEngine": "Çevre Dostu Haber Motoru",
+    "poweredByGreenEnergy": "Yeşil Enerji ve GNews API tarafından desteklenmektedir",
+    "readFullArticle": "Makalenin tamamını okuyun",
+    "savedArticles": "Kaydedilen makaleler",
+    "noSavedArticles": "Kaydedilen makale yok",
+    "articlesYouSaveWillAppearHere": "Kaydettiğiniz makaleler burada görünecek",
+    "settings": "Ayarlar",
+    "appearance": "Görünüm",
+    "darkMode": "Karanlık Mod",
+    "language": "Dil",
+    "content": "İçerik",
+    "newsLanguage": "Haber Dili",
+    "newsCountry": "Haber Ülkesi",
+    "notifications": "Bildirimler",
+    "breakingNews": "Son Dakika Haberleri",
+    "storage": "Depolama",
+    "resetDatabase": "Veritabanını Sıfırla",
+    "appLanguage": "Uygulama Dili",
+    "app": "Uygulama",
+    "version": "Sürüm"
 }

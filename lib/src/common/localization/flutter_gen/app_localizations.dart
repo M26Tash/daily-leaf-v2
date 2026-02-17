@@ -100,17 +100,137 @@ abstract class AppLocalization {
     Locale('tr'),
   ];
 
-  /// No description provided for @loading.
+  /// No description provided for @dailyLeaf.
   ///
   /// In en, this message translates to:
-  /// **'Loading'**
-  String get loading;
+  /// **'Daily Leaf'**
+  String get dailyLeaf;
 
-  /// No description provided for @allNews.
+  /// No description provided for @latestNews.
   ///
   /// In en, this message translates to:
-  /// **'All News'**
-  String get allNews;
+  /// **'Latest News'**
+  String get latestNews;
+
+  /// No description provided for @ecoFriendlyNewsEngine.
+  ///
+  /// In en, this message translates to:
+  /// **'Eco-Friendly News Engine'**
+  String get ecoFriendlyNewsEngine;
+
+  /// No description provided for @poweredByGreenEnergy.
+  ///
+  /// In en, this message translates to:
+  /// **'Powered by Green Energy & GNews API'**
+  String get poweredByGreenEnergy;
+
+  /// No description provided for @readFullArticle.
+  ///
+  /// In en, this message translates to:
+  /// **'Read Full Article'**
+  String get readFullArticle;
+
+  /// No description provided for @savedArticles.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved Articles'**
+  String get savedArticles;
+
+  /// No description provided for @noSavedArticles.
+  ///
+  /// In en, this message translates to:
+  /// **'No Saved Articles'**
+  String get noSavedArticles;
+
+  /// No description provided for @articlesYouSaveWillAppearHere.
+  ///
+  /// In en, this message translates to:
+  /// **'Articles you save will appear here'**
+  String get articlesYouSaveWillAppearHere;
+
+  /// No description provided for @settings.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settings;
+
+  /// No description provided for @appearance.
+  ///
+  /// In en, this message translates to:
+  /// **'Appearance'**
+  String get appearance;
+
+  /// No description provided for @darkMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Dark Mode'**
+  String get darkMode;
+
+  /// No description provided for @language.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get language;
+
+  /// No description provided for @content.
+  ///
+  /// In en, this message translates to:
+  /// **'Content'**
+  String get content;
+
+  /// No description provided for @newsLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'News Language'**
+  String get newsLanguage;
+
+  /// No description provided for @newsCountry.
+  ///
+  /// In en, this message translates to:
+  /// **'News Country'**
+  String get newsCountry;
+
+  /// No description provided for @notifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get notifications;
+
+  /// No description provided for @breakingNews.
+  ///
+  /// In en, this message translates to:
+  /// **'Breaking News'**
+  String get breakingNews;
+
+  /// No description provided for @storage.
+  ///
+  /// In en, this message translates to:
+  /// **'Storage'**
+  String get storage;
+
+  /// No description provided for @resetDatabase.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset Database'**
+  String get resetDatabase;
+
+  /// No description provided for @appLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'App Language'**
+  String get appLanguage;
+
+  /// No description provided for @app.
+  ///
+  /// In en, this message translates to:
+  /// **'App'**
+  String get app;
+
+  /// No description provided for @version.
+  ///
+  /// In en, this message translates to:
+  /// **'Version'**
+  String get version;
 }
 
 class _AppLocalizationDelegate extends LocalizationsDelegate<AppLocalization> {

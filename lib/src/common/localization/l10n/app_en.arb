@@ -1,4 +1,24 @@
 {
-    "loading": "Loading",
-    "allNews": "All News"
+    "dailyLeaf": "Daily Leaf",
+    "latestNews": "Latest News",
+    "ecoFriendlyNewsEngine": "Eco-Friendly News Engine",
+    "poweredByGreenEnergy": "Powered by Green Energy & GNews API",
+    "readFullArticle": "Read Full Article",
+    "savedArticles": "Saved Articles",
+    "noSavedArticles": "No Saved Articles",
+    "articlesYouSaveWillAppearHere": "Articles you save will appear here",
+    "settings": "Settings",
+    "appearance": "Appearance",
+    "darkMode": "Dark Mode",
+    "language": "Language",
+    "content": "Content",
+    "newsLanguage": "News Language",
+    "newsCountry": "News Country",
+    "notifications": "Notifications",
+    "breakingNews": "Breaking News",
+    "storage": "Storage",
+    "resetDatabase": "Reset Database",
+    "appLanguage": "App Language",
+    "app": "App",
+    "version": "Version"
 }

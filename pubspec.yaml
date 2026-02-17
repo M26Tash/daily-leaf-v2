@@ -1,9 +1,9 @@
-name: news_app
+name: daily_leaf
 description: A new Flutter project.
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-version: 1.0.0+1
+version: 2.0.0+1
 
 environment:
   sdk: ">=3.8.0 <4.0.0"
@@ -15,18 +15,30 @@ dependencies:
   cupertino_icons: ^1.0.2
   carousel_slider: ^5.1.2
   http: ^1.6.0
-  # dart_rss: ^2.0.1
   provider: ^6.0.4
   shimmer: ^3.0.0
   cached_network_image: ^3.4.1
   intl: ^0.20.2
   shared_preferences: ^2.0.15
-  url_launcher: ^6.1.7
+  url_launcher: ^6.3.2
   dio: ^5.9.1
   freezed_annotation: ^3.1.0
   json_annotation: ^4.10.0
   logger: ^2.6.2
   equatable: ^2.0.8
+  smooth_page_indicator: ^2.0.1
+  country_flags: ^4.1.2
+  flutter_localized_locales: ^2.0.5
+  drift: ^2.31.0
+  drift_flutter: ^0.2.8
+  path_provider: ^2.1.5
+  path: ^1.9.1
+  sqlite3: ^2.9.4
+  sqlite3_flutter_libs: ^0.5.41
+  package_info_plus: ^9.0.0
+  flutter_native_splash: ^2.4.7
+  flutter_dotenv: ^6.0.0
+  # flutter_local_notifications: ^20.1.0
 
 dev_dependencies:
   flutter_test:
@@ -37,6 +49,7 @@ dev_dependencies:
   flutter_localizations:
     sdk: flutter
   build_runner: ^2.11.1
+  drift_dev: ^2.31.0
   freezed: ^3.2.5
   json_serializable: ^6.12.0
 
@@ -44,4 +57,39 @@ flutter:
   generate: true
 
   uses-material-design: true
+
+  assets:
+  - assets/images/
+  - .env
+
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/Montserrat/Montserrat-Thin.ttf
+        - asset: assets/fonts/Montserrat/Montserrat-ExtraLight.ttf
+        - asset: assets/fonts/Montserrat/Montserrat-Light.ttf
+        - asset: assets/fonts/Montserrat/Montserrat-Regular.ttf
+        - asset: assets/fonts/Montserrat/Montserrat-Medium.ttf
+        - asset: assets/fonts/Montserrat/Montserrat-SemiBold.ttf
+        - asset: assets/fonts/Montserrat/Montserrat-Bold.ttf
+        - asset: assets/fonts/Montserrat/Montserrat-ExtraBold.ttf
+        - asset: assets/fonts/Montserrat/Montserrat-Black.ttf
+    - family: Lora
+      fonts:
+        - asset: assets/fonts/Lora/Lora-Regular.ttf
+        - asset: assets/fonts/Lora/Lora-Medium.ttf
+        - asset: assets/fonts/Lora/Lora-SemiBold.ttf
+        - asset: assets/fonts/Lora/Lora-Bold.ttf
  
+
+flutter_native_splash:
+  color: '#FEFAE0' # Твой фоновый цвет (из темы)
+  image: assets/images/logo.png # Путь к логотипу
+  
+  android_12:
+    image: assets/images/logo.png
+    color: '#FEFAE0'
+    icon_background_color: '#FEFAE0'
+
+  # Если хочешь, чтобы логотип не растягивался
+  fullscreen: true

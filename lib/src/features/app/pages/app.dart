@@ -1,19 +1,18 @@
-// ignore_for_file: prefer_const_constructors, unused_import
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:news_app/src/common/shared_providers/app_theme_provider/app_theme_provider.dart';
-import 'package:news_app/src/common/theme/app_theme.dart';
-import 'package:news_app/src/common/theme/news_theme.dart';
-import 'package:news_app/src/common/theme/theme_provider.dart';
-import 'package:news_app/src/core/api_clients/news_api_client.dart';
-import 'package:news_app/src/common/shared_providers/locale_provider/locale_provider.dart';
-import 'package:news_app/src/common/localization/flutter_gen/app_localizations.dart';
-import 'package:news_app/src/core/repositories/interface/i_news_repository.dart';
-
-import 'package:news_app/src/core/repositories/news_repository.dart';
-import 'package:news_app/src/features/home_page/pages/home_page.dart';
-import 'package:news_app/src/features/home_page/provider/home_provider.dart';
+import 'package:flutter_localized_locales/flutter_localized_locales.dart';
+import 'package:daily_leaf/src/common/shared_providers/app_theme_provider/app_theme_provider.dart';
+import 'package:daily_leaf/src/common/shared_providers/navigation_panel_provider/navigation_panel_provider.dart';
+import 'package:daily_leaf/src/common/theme/app_theme.dart';
+import 'package:daily_leaf/src/common/theme/theme_provider.dart';
+import 'package:daily_leaf/src/core/api_clients/news_api_client.dart';
+import 'package:daily_leaf/src/common/shared_providers/locale_provider/locale_provider.dart';
+import 'package:daily_leaf/src/common/localization/flutter_gen/app_localizations.dart';
+import 'package:daily_leaf/src/core/database/app_local_database.dart';
+import 'package:daily_leaf/src/core/repositories/interface/i_news_repository.dart';
+import 'package:daily_leaf/src/core/repositories/news_repository.dart';
+import 'package:daily_leaf/src/features/main_page/providers/home_provider/home_provider.dart';
+import 'package:daily_leaf/src/features/main_page/providers/settings_provider/settings_provider.dart';
+import 'package:daily_leaf/src/features/splash_page/pages/splash_page.dart';
 import 'package:provider/provider.dart';
 
 class App extends StatelessWidget {
@@ -24,11 +23,27 @@ class App extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (_) => LocaleProvider(),
+          create: (_) => NavigationPanelProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => LocaleProvider()..loadSavedLocale(),
         ),
         ChangeNotifierProvider(
           create: (_) => AppThemeProvider(),
         ),
+        Provider<AppLocalDatabase>(
+          create: (_) => AppLocalDatabase(),
+          dispose: (context, db) => db.close(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) =>
+              SettingsProvider(
+                  context.read<AppLocalDatabase>(),
+                )
+                ..loadSettings()
+                ..initVersion(),
+        ),
+
         Provider(
           create: (_) => NewsApiClient(),
         ),
@@ -37,10 +52,16 @@ class App extends StatelessWidget {
             context.read<NewsApiClient>(),
           ),
         ),
-        ChangeNotifierProvider(
+        ChangeNotifierProxyProvider<SettingsProvider, HomeProvider>(
           create: (context) => HomeProvider(
             repository: context.read<INewsRepository>(),
           ),
+          update: (context, settings, home) {
+            return home!..fetchNews(
+              countryCode: settings.currentCountry,
+              localeCode: settings.currentLang,
+            );
+          },
         ),
       ],
       builder: (context, child) {
@@ -55,10 +76,13 @@ class App extends StatelessWidget {
           child: MaterialApp(
             debugShowCheckedModeBanner: false,
             locale: localeModel.locale,
-            localizationsDelegates: AppLocalization.localizationsDelegates,
+            localizationsDelegates: const [
+              LocaleNamesLocalizationsDelegate(),
+              ...AppLocalization.localizationsDelegates,
+            ],
             supportedLocales: AppLocalization.supportedLocales,
             theme: ThemeData(useMaterial3: true),
-            home: const HomePage(),
+            home: const SplashPage(),
           ),
         );
       },
